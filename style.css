@@ -1117,7 +1117,7 @@ td + td {
   font-size:11px;
   background-color:#0E3C46;
   color:#ffce00;
-  
+
 }
 
 
@@ -1229,6 +1229,18 @@ table.artifact .portal {
 .cellscore .ui-accordion-header-active:before {
 	content: "⊟";
 }
+
+.cellscore .ui-accordion-content {
+  overflow:hidden !important;
+}
+
+@-moz-document url-prefix() {
+ .cellscore .logscale {
+    transform: scale(0.5) translate(0,-18px);
+    vertical-align: top !important;
+  }
+}
+
 g.checkpoint:hover circle {
   fill-opacity: 1;
   stroke-width: 2px;
@@ -1248,6 +1260,23 @@ g.checkpoint:hover circle {
 	text-overflow: ellipsis;
 	vertical-align: text-bottom;
 	width: 100%;
+}
+
+.cellscore #overview {
+  width: 100%;
+}
+
+.cellscore #overview td {
+  white-space: nowrap;
+  width: 1%;
+  text-align: right;
+}
+
+.cellscore #overview th {
+  white-space: nowrap;
+  width: 1%;
+  text-align: left;
+  padding-left: 4px;
 }
 
 /* tabs */

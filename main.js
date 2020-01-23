@@ -93,13 +93,13 @@ document.body.innerHTML = ''
   + '    <div id="toolbox">'
   + '      <a onmouseover="setPermaLink(this)" onclick="setPermaLink(this);return androidPermalink()" title="URL link to this map view">Permalink</a>'
   + '      <a onclick="window.aboutIITC()" style="cursor: help">About IITC</a>'
-  + '      <a onclick="window.regionScoreboard()" title="View regional scoreboard">Region scores</a>'
   + '    </div>'
   + '  </div>'
   + '</div>'
   + '<div id="updatestatus"><div id="innerstatus"></div></div>'
   // avoid error by stock JS
   + '<div id="play_button"></div>';
+
 
 // putting everything in a wrapper function that in turn is placed in a
 // script tag on the website allows us to execute in the site’s context
@@ -181,6 +181,7 @@ window.TEAM_NONE = 0;
 window.TEAM_RES = 1;
 window.TEAM_ENL = 2;
 window.TEAM_TO_CSS = ['none', 'res', 'enl'];
+window.TEAM_NAMES = ['Neutral', 'Resistance', 'Enlightened'];
 
 window.SLOT_TO_LAT = [0, Math.sqrt(2)/2, 1, Math.sqrt(2)/2, 0, -Math.sqrt(2)/2, -1, -Math.sqrt(2)/2];
 window.SLOT_TO_LNG = [1, Math.sqrt(2)/2, 0, -Math.sqrt(2)/2, -1, -Math.sqrt(2)/2, 0, Math.sqrt(2)/2];
@@ -217,9 +218,10 @@ window.overlayStatus = {};
 // overwrite data
 if(typeof window.plugin !== 'function') window.plugin = function() {};
 
-
 @@INJECTCODE@@
 
+  // fixed Addons
+  RegionScoreboard.setup();
 
 } // end of wrapper
 
